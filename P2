@@ -1,0 +1,42 @@
+void setup(){
+  size(800,600);
+  background(0);
+  fill(255);
+  stroke(255);
+}
+
+int x = 100;
+int y = 500;
+boolean derecha = false;
+boolean izquierda = false;
+
+void draw(){
+  background(0);
+  rect(x,y,60,10);
+  //avance
+  if (derecha) {
+    x=x+3;
+  }
+  if (izquierda) {
+    x=x-3;
+ }
+}
+
+void keyPressed(){
+  //println(""+keyCode);
+ if (keyCode == 39){
+   derecha = true;
+   }
+   if (keyCode == 37){
+   izquierda = true;
+ }
+}
+ 
+ void keyReleased(){
+   if (keyCode == 39){
+   derecha = false;
+   }
+   if (keyCode == 37){
+   izquierda = false;
+   }
+ }
