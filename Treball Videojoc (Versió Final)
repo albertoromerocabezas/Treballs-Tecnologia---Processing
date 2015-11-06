@@ -1,0 +1,54 @@
+int x=100; //posicio dela plataforma
+int posY=0; //posicio bola
+float posX=random(0,800);
+
+int score=0;
+int vidas=5;
+int a=5; //avanç de la bola
+
+boolean derecha = false;
+boolean izquierda = false;
+
+PImage img;
+
+void setup(){
+  size (800,400);
+  background(255);
+}
+
+void draw(){
+  background(#0AA9FC);
+   fill(#FC0A3B);
+   rect(x,350,60,10);
+  //avance
+  if(keyCode==39) {
+    derecha=true;
+    x=x+5;
+  }
+  if(keyCode==37){
+    izquierda=true;
+    x=x-5;
+  } 
+  if(x>800){
+   izquierda=false;
+   x=0;
+  }
+   if(x<0){
+   derecha=false;
+   x=800;
+  }
+   fill(#FCE90A);
+   ellipse(posX,posY,20,20);
+   //avance
+   posY=posY+a;
+   
+   if(posY>400)
+   {
+   if(posX>x && posX<x+60){
+   score=score+1;
+   }
+   posY=0;
+   posX=random(0,800); 
+   }
+   text("Score:"+score,50,50,500);
+   }
