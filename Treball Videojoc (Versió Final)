@@ -9,8 +9,6 @@ int a=5; //avanç de la bola
 boolean derecha = false;
 boolean izquierda = false;
 
-PImage img;
-
 void setup(){
   size (800,400);
   background(255);
